@@ -3,15 +3,17 @@ namespace Vidly.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TryUpdateMovies2 : DbMigration
+    public partial class UpdateMoviesTable1 : DbMigration
     {
         public override void Up()
         {
-            DropTable("dbo.Movies");
+            CreateIndex("dbo.Movies", "GenreTypeId");
+            AddForeignKey("dbo.Movies", "GenreTypeId", "dbo.GenreTypes", "Id", cascadeDelete: true);
         }
         
         public override void Down()
         {
+
         }
     }
 }

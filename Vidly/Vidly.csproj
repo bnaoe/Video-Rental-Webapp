@@ -267,13 +267,45 @@
     <Compile Include="Migrations\202108072308027_TryUpdateMoviesTableagain2.Designer.cs">
       <DependentUpon>202108072308027_TryUpdateMoviesTableagain2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108072314038_AddGenres.cs" />
-    <Compile Include="Migrations\202108072314038_AddGenres.Designer.cs">
-      <DependentUpon>202108072314038_AddGenres.cs</DependentUpon>
+    <Compile Include="Migrations\202108080642466_UpdateMoviesTable1.cs" />
+    <Compile Include="Migrations\202108080642466_UpdateMoviesTable1.Designer.cs">
+      <DependentUpon>202108080642466_UpdateMoviesTable1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108072326480_AddMovies1.cs" />
-    <Compile Include="Migrations\202108072326480_AddMovies1.Designer.cs">
-      <DependentUpon>202108072326480_AddMovies1.cs</DependentUpon>
+    <Compile Include="Migrations\202108080644144_UpdateMoviesTableAgain.cs" />
+    <Compile Include="Migrations\202108080644144_UpdateMoviesTableAgain.Designer.cs">
+      <DependentUpon>202108080644144_UpdateMoviesTableAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108080725211_AddMoviesTableData.cs" />
+    <Compile Include="Migrations\202108080725211_AddMoviesTableData.Designer.cs">
+      <DependentUpon>202108080725211_AddMoviesTableData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108080731075_FixMovies.cs" />
+    <Compile Include="Migrations\202108080731075_FixMovies.Designer.cs">
+      <DependentUpon>202108080731075_FixMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108080737468_FixMovies1.cs" />
+    <Compile Include="Migrations\202108080737468_FixMovies1.Designer.cs">
+      <DependentUpon>202108080737468_FixMovies1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108080811546_FixMovies2.cs" />
+    <Compile Include="Migrations\202108080811546_FixMovies2.Designer.cs">
+      <DependentUpon>202108080811546_FixMovies2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108080813575_FixMovies3.cs" />
+    <Compile Include="Migrations\202108080813575_FixMovies3.Designer.cs">
+      <DependentUpon>202108080813575_FixMovies3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108080815047_FixMoviesTabl.cs" />
+    <Compile Include="Migrations\202108080815047_FixMoviesTabl.Designer.cs">
+      <DependentUpon>202108080815047_FixMoviesTabl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108080824158_FixMoviesTabl1.cs" />
+    <Compile Include="Migrations\202108080824158_FixMoviesTabl1.Designer.cs">
+      <DependentUpon>202108080824158_FixMoviesTabl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108080826481_FixMoviesTabl2.cs" />
+    <Compile Include="Migrations\202108080826481_FixMoviesTabl2.Designer.cs">
+      <DependentUpon>202108080826481_FixMoviesTabl2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -282,10 +314,12 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -352,6 +386,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -439,11 +474,35 @@
     <EmbeddedResource Include="Migrations\202108072308027_TryUpdateMoviesTableagain2.resx">
       <DependentUpon>202108072308027_TryUpdateMoviesTableagain2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108072314038_AddGenres.resx">
-      <DependentUpon>202108072314038_AddGenres.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108080642466_UpdateMoviesTable1.resx">
+      <DependentUpon>202108080642466_UpdateMoviesTable1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108072326480_AddMovies1.resx">
-      <DependentUpon>202108072326480_AddMovies1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108080644144_UpdateMoviesTableAgain.resx">
+      <DependentUpon>202108080644144_UpdateMoviesTableAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108080725211_AddMoviesTableData.resx">
+      <DependentUpon>202108080725211_AddMoviesTableData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108080731075_FixMovies.resx">
+      <DependentUpon>202108080731075_FixMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108080737468_FixMovies1.resx">
+      <DependentUpon>202108080737468_FixMovies1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108080811546_FixMovies2.resx">
+      <DependentUpon>202108080811546_FixMovies2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108080813575_FixMovies3.resx">
+      <DependentUpon>202108080813575_FixMovies3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108080815047_FixMoviesTabl.resx">
+      <DependentUpon>202108080815047_FixMoviesTabl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108080824158_FixMoviesTabl1.resx">
+      <DependentUpon>202108080824158_FixMoviesTabl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108080826481_FixMoviesTabl2.resx">
+      <DependentUpon>202108080826481_FixMoviesTabl2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

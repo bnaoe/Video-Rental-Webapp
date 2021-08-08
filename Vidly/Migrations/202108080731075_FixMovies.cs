@@ -3,11 +3,10 @@ namespace Vidly.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TryUpdateMovies2 : DbMigration
+    public partial class FixMovies : DbMigration
     {
         public override void Up()
         {
-            DropTable("dbo.Movies");
         }
         
         public override void Down()

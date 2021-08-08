@@ -3,7 +3,7 @@ namespace Vidly.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddMoviesTableAgain1 : DbMigration
+    public partial class FixMovies2 : DbMigration
     {
         public override void Up()
         {
@@ -13,7 +13,6 @@ namespace Vidly.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false),
-                        GenreTypeId = c.Byte(nullable: false),
                         ReleaseDate = c.DateTime(nullable: false),
                         DateAdded = c.DateTime(nullable: false),
                         Stock = c.Int(nullable: false),
@@ -23,7 +22,7 @@ namespace Vidly.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Movies");
+
         }
     }
 }
