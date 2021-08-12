@@ -28,10 +28,11 @@ namespace Vidly.Controllers
         // GET: Movies/
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(m => m.GenreType).ToList();
+          //  var movies = _context.Movies.Include(m => m.GenreType).ToList();
 
-            return View(movies);
+          //  return View(movies);
 
+          return View();
         }
 
         public ActionResult Details(int id)
@@ -46,14 +47,16 @@ namespace Vidly.Controllers
 
         }
 
-        public ActionResult New()
+        public ViewResult New()
         {
+            
             var genreTypes = _context.GenreTypes.ToList();
             var viewModel = new MovieFormViewModel
             {
+                //Movie = new Movie(),
                 GenreTypes = genreTypes
             };
-
+            
             return View("MovieForm", viewModel);
         }
 
@@ -63,9 +66,8 @@ namespace Vidly.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new MovieFormViewModel
+                var viewModel = new MovieFormViewModel(movie)
                 {
-                    Movie = movie,
                     GenreTypes = _context.GenreTypes.ToList()
                 };
 
@@ -74,7 +76,10 @@ namespace Vidly.Controllers
             }
 
             if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
                 _context.Movies.Add(movie);
+            }
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
@@ -99,9 +104,8 @@ namespace Vidly.Controllers
                 return HttpNotFound();
 
 
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel(movie)
             {
-                Movie = movie,
                 GenreTypes = _context.GenreTypes.ToList()
             };
 
