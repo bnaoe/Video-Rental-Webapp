@@ -199,14 +199,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\CustomersController.cs" />
     <Compile Include="Controllers\API\MoviesController.cs" />
+    <Compile Include="Controllers\API\NewRentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreTypeDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
+    <Compile Include="Dtos\NewRentalDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -354,6 +357,14 @@
     <Compile Include="Migrations\202108131449229_AddPhoneNoToApplicationUser.Designer.cs">
       <DependentUpon>202108131449229_AddPhoneNoToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108141852111_AddRentals.cs" />
+    <Compile Include="Migrations\202108141852111_AddRentals.Designer.cs">
+      <DependentUpon>202108141852111_AddRentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108150136428_AddNumberAvailableToMovies.cs" />
+    <Compile Include="Migrations\202108150136428_AddNumberAvailableToMovies.Designer.cs">
+      <DependentUpon>202108150136428_AddNumberAvailableToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -364,6 +375,7 @@
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Min1To20StockNo.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -484,10 +496,13 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\TypeAhead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -569,6 +584,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -615,6 +634,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Rentals\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -737,6 +757,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108131449229_AddPhoneNoToApplicationUser.resx">
       <DependentUpon>202108131449229_AddPhoneNoToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108141852111_AddRentals.resx">
+      <DependentUpon>202108141852111_AddRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108150136428_AddNumberAvailableToMovies.resx">
+      <DependentUpon>202108150136428_AddNumberAvailableToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
